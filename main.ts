@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 import express from "express";
-/*
+
 try{
 
     
@@ -26,8 +26,6 @@ try{
     app.listen(3000, () => console.info("Listening on port 3000. API ready to use"));   //Escucho en el puerto 3000
   
     
-
-    
   
   }
   catch(e){
@@ -35,9 +33,9 @@ try{
     Deno.exit(1);
   }   
   
-  */
+  
 
-console.log("Hola");
+
 
 
 
