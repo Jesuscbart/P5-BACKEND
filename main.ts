@@ -33,7 +33,6 @@ try{
   }
   catch(e){
     console.error(e);
-    Deno.exit(1);
   }   
   
   
