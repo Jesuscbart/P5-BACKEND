@@ -1,4 +1,3 @@
-import { BookingModel } from "../db/booking.ts";
 import { BookingModelType } from "../db/booking.ts";
 import { ClientModel } from "../db/client.ts";
 import { RestaurantModel } from "../db/restaurant.ts";

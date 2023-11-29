@@ -14,10 +14,10 @@ const bookingSchema = new Schema(
   { timestamps: true }
 );
 
-bookingSchema.path("year").validate((year: number) => {
+/*bookingSchema.path("year").validate((year: number) => {
     if (year < 1 || year > 4) return false;
     return true;
-});
+});*/
 
 // validate restaurantID
 bookingSchema.path("restaurantID").validate(async (restaurantID: mongoose.Types.ObjectId) => {
