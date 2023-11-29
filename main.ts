@@ -18,7 +18,7 @@ try{
     const app = express();
     app.use(express.json());
 
-    app.get('/', (_req, res) => { res.send('API IS RUNNING')});
+    //app.get('/', (_req, res) => { res.send('API IS RUNNING')});
 
 
     app.listen(3000, () => console.info("Listening on port 3000. API ready to use"));   //Escucho en el puerto 3000
