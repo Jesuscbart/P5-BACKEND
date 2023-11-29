@@ -20,3 +20,25 @@ POST /client                -> Crea un cliente
 POST /restaurant            -> Crea un restaurante
 POST /booking               -> Crea una reserva
 
+
+{
+    "firstName": "Pepe",
+    "lastName": "Gonzalez",
+    "email": "pepito@gon.com",
+    "phoneNumber": "+34 620202020",
+    "DNI": "87654321F"
+}
+
+El CIF/NIF de una empresa se caracteriza por llevar, en primer lugar, una letra, a continuación, 7 números, y, finalmente, una letra de control.
+
+{
+    "name": "Casa Manolo",
+    "CIF": "A12345678",
+    "address": "Calle Alberto Aguilera 33, Madrid, 28015"
+}
+
+{
+    "date": "Sat Sep 13 275760 00:00:00 GMT+0000",
+    "clientID": "6567c0649072d32e1df23c05",
+    "restaurantID": "6567c6aa36f33608219e13cb"
+}

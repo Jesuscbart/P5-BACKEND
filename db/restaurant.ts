@@ -13,11 +13,11 @@ const restaurantSchema = new Schema(
 );
 
 // validate CIF -- ARREGLAR
-restaurantSchema.path("CIF").validate(async (CIF: mongoose.Types.ObjectId) => {
+/*restaurantSchema.path("CIF").validate(async (CIF: mongoose.Types.ObjectId) => {
   const restaurant = await RestaurantModel.findById(CIF).exec();
   if (!restaurant) return false;
   return true;
-});
+});*/
 
 export type RestaurantModelType = mongoose.Document & Omit<Restaurant, "id" | "bookings">;
 

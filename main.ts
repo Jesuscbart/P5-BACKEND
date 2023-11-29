@@ -2,6 +2,8 @@ import mongoose from "mongoose";
 import express from "express";                     //Importo mongoose
 import { Request, Response } from "express";
 import { postClient } from "./resolvers/POST-Client.ts";
+import { postRestaurant } from "./resolvers/POST-Restaurant.ts";
+import { postBooking } from "./resolvers/POST-Bookings.ts";
 
 try{
 
@@ -24,6 +26,8 @@ try{
     .get("/", (_req: Request, res: Response) => { res.send("API ready to use") })                            //Ruta inicial por defecto
 
     .post("/client", postClient)
+    .post("/restaurant", postRestaurant)
+    .post("/booking", postBooking)
 
 
 

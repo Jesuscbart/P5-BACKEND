@@ -19,8 +19,8 @@ const bookingSchema = new Schema(
     return true;
 });*/
 
-// validate restaurantID
-bookingSchema.path("restaurantID").validate(async (restaurantID: mongoose.Types.ObjectId) => {
+// validate restaurantID 
+/*bookingSchema.path("restaurantID").validate(async (restaurantID: mongoose.Types.ObjectId) => {
     const restaurant = await RestaurantModel.findById(restaurantID).exec();
     if (!restaurant) return false;
     return true;
@@ -36,7 +36,7 @@ bookingSchema.path("clientID").validate(async (clientIDs: mongoose.Types.ObjectI
     catch (e){
         return false;
     }
-});
+});*/
 
 export type BookingModelType = mongoose.Document &
     Omit<Booking, "id" | "restaurant" | "clients"> & 
@@ -46,5 +46,3 @@ export type BookingModelType = mongoose.Document &
     };
 
 export const BookingModel = mongoose.model<BookingModelType>("Booking", bookingSchema);
-
-
