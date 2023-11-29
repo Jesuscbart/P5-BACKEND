@@ -14,7 +14,6 @@ try{
     await mongoose.connect(MONGO_URL);
     console.info("Successfully connected to MongoDB");
   
-
     const app = express();
     app.use(express.json());
 
@@ -27,6 +26,7 @@ try{
   }
   catch(e){
     console.error(e);
+    Deno.exit(1);
   }   
   
   

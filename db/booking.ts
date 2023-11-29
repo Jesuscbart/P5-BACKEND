@@ -8,7 +8,7 @@ const Schema = mongoose.Schema;
 const bookingSchema = new Schema(
   {
     date: { type: Date, optional: true },
-    client: { type: Schema.Types.ObjectId, ref: "Client" },
+    clientID: { type: Schema.Types.ObjectId, ref: "Client" },
     restaurantID: { type: Schema.Types.ObjectId, ref: "Restaurant" },
   },
   { timestamps: true }

@@ -3,14 +3,14 @@ export type Restaurant = {
     name: string;
     CIF: string;
     address: string;
-    bookings: Array<Omit<Booking, "restaurant" | "clients">>;
+    bookings: Array<Omit<Booking, "restaurant" | "client">>;
 }
 
 export type Booking = {
     id: string;
     date: Date;
-    client: string;
-    restaurant: Omit<Restaurant, "bookings">; //Tipo que es y lo que no quiero que tenga
+    clientID: Omit<Client, "bookings">;
+    restaurantID: Omit<Restaurant, "bookings">; //Tipo que es y lo que no quiero que tenga
 }
 
 export type Client = {
@@ -20,5 +20,5 @@ export type Client = {
     email: string;
     phoneNumber: string;
     DNI: string;
-    bookings: Array<Omit<Booking, "clients" | "restaurant">>;
+    bookings: Array<Omit<Booking, "client" | "restaurant">>;
 }

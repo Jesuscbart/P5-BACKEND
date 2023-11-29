@@ -13,7 +13,7 @@ GET /restaurant/id          -> Devuelve un restaurante por id
 GET / booking/id            -> Devuelve una reserva por id
 
 DELETE /restaurant/id       -> Elimina un restaurante por id
-DELETE restaurant           -> Elimina todas las reservas de los restaurantes
+DELETE restaurant           -> Elimina todas las reservas de los restaurantes (escuchar audio wasap)
 DELETE /booking/id          -> Elimina una reserva por id
 
 POST /client                -> Crea un cliente
