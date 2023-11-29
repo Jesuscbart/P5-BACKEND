@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import express from "express";
+import express from "express";                     //Importo mongoose
 
 try{
 
@@ -18,15 +18,12 @@ try{
     const app = express();
     app.use(express.json());
 
-    app
-
-    .get("/", (_req: Request, res: Response) => { res.send("API ready to use") });                            //Ruta inicial por defecto
+    app.get('/', (_req, res) => { res.send('API IS RUNNING')});
 
 
     app.listen(3000, () => console.info("Listening on port 3000. API ready to use"));   //Escucho en el puerto 3000
   
     
-  
   }
   catch(e){
     console.error(e);
