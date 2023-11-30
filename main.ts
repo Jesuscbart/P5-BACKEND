@@ -19,6 +19,7 @@ try{
   
     if (!MONGO_URL) {
       console.log("No mongo URL found");
+      Deno.exit(1);
     }
   
     await mongoose.connect(MONGO_URL);
@@ -41,10 +42,6 @@ try{
     .delete("/restaurant/:id", deleteRestaurant)
     .delete("/client/:id", deleteClient)
     .delete("/allRestaurants", deleteAllRestaurants)
-    
-  
-
-
 
     app.listen(3000, () => console.info("Listening on port 3000. API ready to use"));   //Escucho en el puerto 3000
   
