@@ -19,7 +19,6 @@ try{
   
     if (!MONGO_URL) {
       console.log("No mongo URL found");
-      Deno.exit(1);
     }
   
     await mongoose.connect(MONGO_URL);
@@ -30,7 +29,7 @@ try{
 
     app
 
-    //.get("/", (_req: Request, res: Response) => { res.send("API ready to use") })                            //Ruta inicial por defecto
+    .get("/", (_req: Request, res: Response) => { res.send("API ready to use") })                            //Ruta inicial por defecto
 
     .post("/client", postClient)
     .post("/restaurant", postRestaurant)
