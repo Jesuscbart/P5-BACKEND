@@ -30,7 +30,7 @@ try{
 
     app
 
-    .get("/", (_req: Request, res: Response) => { res.send("API ready to use") })                            //Ruta inicial por defecto
+    //.get("/", (_req: Request, res: Response) => { res.send("API ready to use") })                            //Ruta inicial por defecto
 
     .post("/client", postClient)
     .post("/restaurant", postRestaurant)
