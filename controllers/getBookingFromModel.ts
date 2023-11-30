@@ -3,6 +3,7 @@ import { ClientModel } from "../db/client.ts";
 import { RestaurantModel } from "../db/restaurant.ts";
 import { Booking } from "../types.ts";
 
+// función que recibe un objeto de tipo BookingModelType y devuelve un objeto de tipo Booking
 export const getBookingFromModel = async (booking: BookingModelType): Promise<Booking> => {
     
     const { _id, date, clientID, restaurantID } = booking;

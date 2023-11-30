@@ -2,6 +2,7 @@ import { BookingModel } from "../db/booking.ts";
 import { ClientModelType } from "../db/client.ts";
 import { Client } from "../types.ts";
 
+// función que recibe un objeto de tipo ClientModelType y devuelve un objeto de tipo Client
 export const getClientFromModel = async (client: ClientModelType): Promise<Client> => {
     
     const { _id, firstName, lastName, email, phoneNumber, DNI } = client;
