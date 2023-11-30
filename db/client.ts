@@ -15,7 +15,7 @@ const clientSchema = new Schema(
   { timestamps: true }
 );
 
-// validate email - regex = Regular Expression
+// validate email - regex = Regular Expression - https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Regular_expressions/Cheatsheet
 clientSchema.path("email").validate((email: string) => {
   // letras, números y caracteres seguidos de @ seguido de letras y números seguido de un punto seguido de al menos 2 letras
   const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
