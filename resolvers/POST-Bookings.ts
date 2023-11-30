@@ -3,7 +3,7 @@ import { Booking } from "../types.ts";
 import { BookingModel, BookingModelType } from "../db/booking.ts";
 import { getBookingFromModel } from "../controllers/getBookingFromModel.ts";
 
-export const postBooking = async (req: Request<{}, {}, BookingModelType>,res: Response<Booking | { error: unknown }>) => {
+export const postBooking = async (req: Request<undefined, undefined, BookingModelType>,res: Response<Booking | { error: unknown }>) => {
     try {
         const { date, clientID, restaurantID } = req.body;
 
@@ -12,9 +12,9 @@ export const postBooking = async (req: Request<{}, {}, BookingModelType>,res: Re
 
         const bookings: Booking = await getBookingFromModel(booking);
 
-        res.json(bookings);
+        res.status(201).json(bookings);
     }
     catch(error){
-        res.status(500).send(error);
+        res.status(500).json({ error: error.message });
     }
 };

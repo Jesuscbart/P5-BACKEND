@@ -1,4 +1,4 @@
-import { Requerst, Response } from "express";
+import { Request, Response } from "express";
 import { Client } from "../types.ts";
 import { ClientModel, ClientModelType } from "../db/client.ts";
 import { getClientFromModel } from "../controllers/getClientFromModel.ts";

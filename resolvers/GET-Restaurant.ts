@@ -1,4 +1,4 @@
-import { Requerst, Response } from "express";
+import { Request, Response } from "express";
 import { Restaurant } from "../types.ts";
 import { RestaurantModel, RestaurantModelType } from "../db/restaurant.ts";
 import { getRestaurantFromModel } from "../controllers/getRestaurantFromModel.ts";

@@ -1,6 +1,7 @@
-import mongoose from "mongoose";
-import express from "express";                     //Importo mongoose
+// @deno-types="npm:@types/express@4"
 import { Request, Response } from "express";
+import mongoose from "mongoose";
+import express from "express";                  
 import { postClient } from "./resolvers/POST-Client.ts";
 import { postRestaurant } from "./resolvers/POST-Restaurant.ts";
 import { postBooking } from "./resolvers/POST-Bookings.ts";
@@ -10,7 +11,6 @@ import { getBooking } from "./resolvers/GET-Booking.ts";
 
 try{
 
-    
     const MONGO_URL = Deno.env.get("MONGO_URL");
   
     if (!MONGO_URL) {
