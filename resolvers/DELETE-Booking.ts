@@ -2,6 +2,7 @@
 import { Request, Response } from "express";
 import { BookingModel } from "../db/booking.ts";
 
+
 export const deleteBooking = async (req: Request<{ id: string }>,res: Response<string | { error: unknown }>) => {
     const id = req.params.id;
     

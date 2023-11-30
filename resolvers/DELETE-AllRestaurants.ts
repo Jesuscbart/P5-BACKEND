@@ -2,7 +2,7 @@
 import { Request, Response } from "express";
 import { RestaurantModel } from "../db/restaurant.ts";
 
-export const deleteAllRestaurants = async (req: Request,res: Response<string | { error: unknown }>) => {
+export const deleteAllRestaurants = async (_req: Request,res: Response<string | { error: unknown }>) => {
     
     try{
 

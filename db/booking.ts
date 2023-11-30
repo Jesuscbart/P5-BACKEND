@@ -14,13 +14,8 @@ const bookingSchema = new Schema(
   { timestamps: true }
 );
 
-/*bookingSchema.path("year").validate((year: number) => {
-    if (year < 1 || year > 4) return false;
-    return true;
-});*/
-
 // validate restaurantID 
-/*bookingSchema.path("restaurantID").validate(async (restaurantID: mongoose.Types.ObjectId) => {
+bookingSchema.path("restaurantID").validate(async (restaurantID: mongoose.Types.ObjectId) => {
     const restaurant = await RestaurantModel.findById(restaurantID).exec();
     if (!restaurant) return false;
     return true;
@@ -36,7 +31,7 @@ bookingSchema.path("clientID").validate(async (clientIDs: mongoose.Types.ObjectI
     catch (e){
         return false;
     }
-});*/
+});
 
 export type BookingModelType = mongoose.Document &
     Omit<Booking, "id" | "restaurant" | "clients"> & 
