@@ -4,6 +4,9 @@ import { Request, Response } from "express";
 import { postClient } from "./resolvers/POST-Client.ts";
 import { postRestaurant } from "./resolvers/POST-Restaurant.ts";
 import { postBooking } from "./resolvers/POST-Bookings.ts";
+import { getClient } from "./resolvers/GET-Client.ts";
+import { getRestaurant } from "./resolvers/GET-Restaurant.ts";
+import { getBooking } from "./resolvers/GET-Booking.ts";
 
 try{
 
@@ -28,6 +31,9 @@ try{
     .post("/client", postClient)
     .post("/restaurant", postRestaurant)
     .post("/booking", postBooking)
+    .get("/client/:id", getClient)
+    .get("/restaurant/:id", getRestaurant)
+    .get("/booking/:id", getBooking)
 
 
 
