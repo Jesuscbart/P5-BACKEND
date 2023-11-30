@@ -1,6 +1,7 @@
+// @deno-types="npm:@types/express@4"
 import { Request, Response } from "express";
 import { Client } from "../types.ts";
-import { ClientModel, ClientModelType } from "../db/client.ts";
+import { ClientModel } from "../db/client.ts";
 import { getClientFromModel } from "../controllers/getClientFromModel.ts";
 
 export const getClient = async (req: Request<{ id: string }>,res: Response<Client | { error: unknown }>) => {

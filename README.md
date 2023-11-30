@@ -29,7 +29,6 @@ POST /booking               -> Crea una reserva
     "DNI": "87654321F"
 }
 
-El CIF/NIF de una empresa se caracteriza por llevar, en primer lugar, una letra, a continuación, 7 números, y, finalmente, una letra de control.
 
 {
     "name": "Casa Manolo",

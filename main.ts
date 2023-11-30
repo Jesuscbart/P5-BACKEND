@@ -8,6 +8,10 @@ import { postBooking } from "./resolvers/POST-Bookings.ts";
 import { getClient } from "./resolvers/GET-Client.ts";
 import { getRestaurant } from "./resolvers/GET-Restaurant.ts";
 import { getBooking } from "./resolvers/GET-Booking.ts";
+import { deleteBooking } from "./resolvers/DELETE-Booking.ts";
+import { deleteRestaurant } from "./resolvers/DELETE-Restaurant.ts";
+import { deleteClient } from "./resolvers/DELETE-Client.ts";
+import { deleteAllRestaurants } from "./resolvers/DELETE-AllRestaurants.ts";
 
 try{
 
@@ -34,6 +38,12 @@ try{
     .get("/client/:id", getClient)
     .get("/restaurant/:id", getRestaurant)
     .get("/booking/:id", getBooking)
+    .delete("/booking/:id", deleteBooking)
+    .delete("/restaurant/:id", deleteRestaurant)
+    .delete("/client/:id", deleteClient)
+    .delete("/allRestaurants", deleteAllRestaurants)
+    
+  
 
 
 

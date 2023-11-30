@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
 import { Client } from "../types.ts";
+import { BookingModel } from "./booking.ts";
 
 const Schema = mongoose.Schema;
 
@@ -33,6 +34,16 @@ clientSchema.path("DNI").validate((DNI: string) => {
   // 8 dígitos seguidos de una letra mayúscula
   const regex = /^\d{8}[A-Z]$/; 
   return regex.test(DNI);
+});
+
+// Middleware que se ejecuta después de que un cliente es eliminado
+clientSchema.post('deleteOne', { document: true, query: false }, async function(doc) {
+  try {
+    await BookingModel.deleteMany({ clientID: doc._id });
+    // Y cualquier otra lógica necesaria
+  } catch (error) {
+    console.error('Error al eliminar reservas del cliente:', error);
+  }
 });
 
 export type ClientModelType = mongoose.Document & Omit<Client, "id" | "bookings">;

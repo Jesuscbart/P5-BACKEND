@@ -1,6 +1,7 @@
+// @deno-types="npm:@types/express@4"
 import { Request, Response } from "express";
 import { Restaurant } from "../types.ts";
-import { RestaurantModel, RestaurantModelType } from "../db/restaurant.ts";
+import { RestaurantModel } from "../db/restaurant.ts";
 import { getRestaurantFromModel } from "../controllers/getRestaurantFromModel.ts";
 
 export const getRestaurant = async (req: Request<{ id: string }>,res: Response<Restaurant | { error: unknown }>) => {
