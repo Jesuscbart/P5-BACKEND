@@ -13,15 +13,17 @@ import { deleteRestaurant } from "./resolvers/DELETE-Restaurant.ts";
 import { deleteClient } from "./resolvers/DELETE-Client.ts";
 import { deleteAllRestaurants } from "./resolvers/DELETE-AllRestaurants.ts";
 
+try{
 
-    const MONGO_URL=Deno.env.get("MONGO_URL");                                                
-
-    if (!MONGO_URL) {                                                                        
-      console.log("No mongo URl found");
-      throw new Error("Mongo URL not found");
+    const MONGO_URL = Deno.env.get("MONGO_URL");
+  
+    if (!MONGO_URL) {
+      console.log("No mongo URL found");
+      Deno.exit(1);
     }
-    await mongoose.connect(MONGO_URL);                                                       
-    console.log("Se ha conectado a la base de datos");
+  
+    await mongoose.connect(MONGO_URL);
+    console.info("Successfully connected to MongoDB");
   
     const app = express();
     app.use(express.json());
@@ -40,9 +42,15 @@ import { deleteAllRestaurants } from "./resolvers/DELETE-AllRestaurants.ts";
     .delete("/restaurant/:id", deleteRestaurant)
     .delete("/client/:id", deleteClient)
     .delete("/allRestaurants", deleteAllRestaurants)
-
-
+    
+  
     app.listen(3000, () => console.info("Listening on port 3000. API ready to use"));   //Escucho en el puerto 3000
+  
+    
+  }
+  catch(e){
+    console.error(e);
+  }   
   
   
 
